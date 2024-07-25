@@ -35,7 +35,7 @@ jobs:
       - name: Use right image
         run: |-
           kustomize edit set image PROJECT/IMAGE=djblackett/log-output:$GITHUB_SHA
-          kustomize edit set image PROJECT/IMAGE=djblackett/ping-pong:$GITHUB_SHA
+          kustomize edit set image PROJECT/IMAGE=djblackett/pingpong:$GITHUB_SHA
 
       - name: commit kustomization.yaml to GitHub
         uses: EndBug/add-and-commit@v9
