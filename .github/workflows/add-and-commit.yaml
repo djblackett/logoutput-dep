@@ -26,7 +26,7 @@ jobs:
 
       - name: Build and publish pingpong
         run: |-
-          docker build --tag "djblackett/ping-pong:$GITHUB_SHA" ./pingpong
+          docker build --tag "djblackett/pingpong:$GITHUB_SHA" ./pingpong
           docker push "djblackett/pingpong:$GITHUB_SHA"
 
       - name: Set up Kustomize
