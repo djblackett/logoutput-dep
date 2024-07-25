@@ -21,21 +21,21 @@ jobs:
       # tag image with the GitHub SHA to get a unique tag
       - name: Build and publish log-output
         run: |-
-          docker build --tag "djblackett/log-output:$GITHUB_SHA" ./log-output
-          docker push "djblackett/log-output:$GITHUB_SHA"
+          docker build --tag "djblackett/log-output:${{ github.sha }}" ./log-output
+          docker push "djblackett/log-output:${{ github.sha }}"
 
       - name: Build and publish pingpong
         run: |-
-          docker build --tag "djblackett/pingpong:$GITHUB_SHA" ./pingpong
-          docker push "djblackett/pingpong:$GITHUB_SHA"
+          docker build --tag "djblackett/pingpong:${{ github.sha }}" ./pingpong
+          docker push "djblackett/pingpong:${{ github.sha }}"
 
       - name: Set up Kustomize
         uses: imranismail/setup-kustomize@v2
 
       - name: Use right image
         run: |-
-          kustomize edit set image PROJECT/IMAGE=djblackett/log-output:$GITHUB_SHA
-          kustomize edit set image PROJECT/IMAGE=djblackett/pingpong:$GITHUB_SHA
+          kustomize edit set image log-output=djblackett/log-output:${{ github.sha }}
+          kustomize edit set image ping-pong=djblackett/pingpong:${{ github.sha }}
 
       - name: commit kustomization.yaml to GitHub
         uses: EndBug/add-and-commit@v9
