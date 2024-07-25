@@ -1,15 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - manifests/ingress.yaml
-  - manifests/log-output-deployment.yaml
-  - manifests/log-configmap.yaml
-  - manifests/ping-pong-deployment.yaml
-  - manifests/redis-statefulset.yaml
-  - manifests/busybox.yaml
+- manifests/ingress.yaml
+- manifests/log-output-deployment.yaml
+- manifests/log-configmap.yaml
+- manifests/ping-pong-deployment.yaml
+- manifests/redis-statefulset.yaml
+- manifests/busybox.yaml
 
 images:
-  - name: PROJECT/LOG_IMAGE
-    newName: log-output-dep
-  - name: PROJECT/PING_IMAGE
-    newName: pingpong-dep
+- name: PROJECT/IMAGE
+  newName: djblackett/pingpong
+  newTag: e4c56436c7da72b253d7a7b2cfcb2f14362cd6aa
+- name: PROJECT/LOG_IMAGE
+  newName: log-output-dep
+- name: PROJECT/PING_IMAGE
+  newName: pingpong-dep
