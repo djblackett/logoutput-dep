@@ -1,0 +1,8 @@
+providers:
+  kubernetesCRD:
+  allowCrossNamespace: true
+allowExternalNameServices: true
+kubernetesIngress:
+  allowExternalNameServices: true
+publishedService:
+  enabled: true
