@@ -16,3 +16,9 @@ images:
   newName: log-output-dep
 - name: PROJECT/PING_IMAGE
   newName: pingpong-dep
+- name: log-output
+  newName: djblackett/log-output
+  newTag: 88fe574f5ecad36c460ec48a8b1c04f3764c57f8
+- name: ping-pong
+  newName: djblackett/pingpong
+  newTag: 88fe574f5ecad36c460ec48a8b1c04f3764c57f8
