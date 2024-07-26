@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: log-output
-          image: PROJECT/LOG_IMAGE
+          image: djblackett/log-output:0bfd6c25af25fd17e484f6394b12abf599212e32
           env:
             - name: PING_PONG_SERVICE
               value: "http://ping-pong-svc:2345"

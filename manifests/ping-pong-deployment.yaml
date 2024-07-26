@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ping-pong
-          image: PROJECT/PING_PONG_IMAGE
+          image: djblackett/pingpong:0bfd6c25af25fd17e484f6394b12abf599212e32
           ports:
             - containerPort: 8000
           env:
